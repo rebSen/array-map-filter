@@ -24,7 +24,21 @@ Sortie attendue:
  */
 
 function keepStarks(names) {
+  return names.filter(function(who) {
+    return who.endsWith("Stark");
+  });
 }
+
+// soluce david :
+// function keepStarks(names) {
+//   return names.filter((who) => {
+//     return who.toLowerCase().endsWith("Stark");
+//   });
+// }
+
+
 
 // Ne pas modifier l'export
 module.exports = keepStarks;
+
+

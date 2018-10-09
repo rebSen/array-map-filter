@@ -26,8 +26,48 @@ Sortie attendue:
 
 */
 
+
+
 function filterOffensiveComments(comments, bannedWords) {
-}
+ 
+  return comments.filter(function(item) {
+    for (banned of bannedWords) {
+        if (item.toLowerCase().includes(banned.toLowerCase())) {
+            return false;
+        }
+      }
+      return true;
+   });
+  }
+
+//  banned > variable crée à la volée qui sera un itérateur de l'array bannedWords
+
+// soluce david
+
+// function filterOffensiveComments(comments, bannedWords) {
+ 
+//   return comments.filter((comment) => {
+//     let KeepIt = true;
+//     bannedWords.map((banned) => {
+//       if (item.toLowerCase().includes(banned.toLowerCase())) {
+//         KeepIt = false;
+//     }
+//     });
+//   })
+// }
 
 // Ne pas modifier l'export
 module.exports = filterOffensiveComments;
+
+
+let tabl = [
+  'bloody anf the sytrin',
+  'React is not a damn',
+  'Why beyond me',
+  'Which bloody one is belar',
+  'There DAMN YOU',
+]
+
+let nope = ['damn', 'bloody']
+
+console.log(filterOffensiveComments(tabl, nope));

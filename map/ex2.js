@@ -42,7 +42,16 @@ En sortie: [
 
  */
 
-function getFoodCategories(foods) {
+
+function getFoodCategories (modele) {
+ return modele.map(function(foods){
+  if (foods.isVegetarian === true) {
+      regime = "is suitable for vegetarians";
+  } else { 
+      regime = "is not suitable for vegetarians";
+  }
+   return `${foods.food} ${regime}`
+});
 }
 
 
